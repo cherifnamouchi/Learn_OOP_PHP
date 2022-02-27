@@ -1,0 +1,9 @@
+{
+    "name": "user/4-constante",
+    "autoload": {
+        "psr-4": {
+            "Class\\": "class/"
+        }
+    },
+    "require": {}
+}
