@@ -2,15 +2,10 @@
 
 require '../vendor/autoload.php';
 
-use Class\Reservation;
+use Class\Invoice;
+use Class\User;
 
-/* $reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation(); */
+$user = new User();
+$invoice = new Invoice();
 
-#echo $reservation::$count;
-
-
-var_dump(Reservation::getInstance());
-var_dump(Reservation::getCount());
+var_dump($user->sendEmail(), $invoice);
