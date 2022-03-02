@@ -1,9 +1,15 @@
 {
-    "name": "user/4-constante",
+    "name": "user/phpoop",
     "autoload": {
         "psr-4": {
-            "Class\\": "class/"
+            "Router\\": "Router/",
+            "Exceptions\\": "Exceptions/",
+            "Controllers\\": "Controllers/",
+            "Models\\": "Models/",
+            "Source\\": "src/"
         }
     },
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }

@@ -2,15 +2,26 @@
 
 require '../vendor/autoload.php';
 
-use Class\Reservation;
+use Router\Router;
+use Exceptions\RouteNotFoundException;
 
-/* $reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation(); */
+$router = new Router();
 
-#echo $reservation::$count;
+$router->register('/', ['Controllers\HomeController', 'index']);
 
+/* $router->register('/contact', function() {
+    return 'ContactPage';
+});
 
-var_dump(Reservation::getInstance());
-var_dump(Reservation::getCount());
+$router->register('/user', function() {
+    return 'UserPage';
+}); */
+
+$newPath = explode('/learn_oop_php/13-MVC/public', $_SERVER['REQUEST_URI']);
+$newPath = implode($newPath);
+
+try {
+    echo $router->resolve($newPath);  
+} catch(RouteNotFoundException $e) {
+    echo $e->getMessage();
+}

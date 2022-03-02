@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Class\\' => array($baseDir . '/class'),
+    'Router\\' => array($baseDir . '/Router'),
+    'Exceptions\\' => array($baseDir . '/Exceptions'),
 );

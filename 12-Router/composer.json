@@ -3,7 +3,7 @@
     "autoload": {
         "psr-4": {
             "Router\\": "Router/",
-            "Exceptions\\": "Exception/"
+            "Exceptions\\": "Exceptions/"
         }
     },
     "require": {}

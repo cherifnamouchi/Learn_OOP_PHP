@@ -1,16 +1,24 @@
 <?php
 
-require '../vendor/autoload.php';
+use Source\App;
+use Router\Router;
 
-use Class\Reservation;
+require './../vendor/autoload.php';
 
-/* $reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation();
-$reservation = new Reservation(); */
+define('BASE_VIEW_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views'
+. DIRECTORY_SEPARATOR);
 
-#echo $reservation::$count;
+$router = new Router();
+
+$router->get('/', ['Controllers\HomeController', 'index']);
 
 
-var_dump(Reservation::getInstance());
-var_dump(Reservation::getCount());
+$newPath = explode('/learn_oop_php/16-PHPUnit/public', $_SERVER['REQUEST_URI']);
+$newPath = implode($newPath);
+
+
+(new App($router, [
+    'uri' => $newPath,
+    'method' => $_SERVER['REQUEST_METHOD']
+    ]
+))->run();

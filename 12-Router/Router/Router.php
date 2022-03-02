@@ -11,7 +11,7 @@ class Router {
     public function register(string $path, callable $action) : void {
         $this->routes[$path] = $action;
     }
-
+    
     public function resolve(string $uri) : mixed {
         $path = explode('?', $uri)[0];
         $action = $this->routes[$path] ?? null;
